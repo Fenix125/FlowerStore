@@ -3,9 +3,9 @@ package flowers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import lab3.oop.flowers.Flower;
-import lab3.oop.flowers.FlowerBucket;
-import lab3.oop.flowers.FlowerPack;
+import lab.oop.flowers.Flower;
+import lab.oop.flowers.FlowerBucket;
+import lab.oop.flowers.FlowerPack;
 
 import org.junit.jupiter.api.Assertions;
 

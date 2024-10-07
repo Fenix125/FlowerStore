@@ -1,4 +1,4 @@
-package lab3.oop.flowers;
+package lab.oop.flowers;
 
 public enum FlowerType {
     ROSE, TULIP, CHAMOMILE;

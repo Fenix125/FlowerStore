@@ -1,7 +1,11 @@
-package lab3.oop.flowers;
+package lab.oop.flowers;
 
 public enum FlowerColor {
-    RED("#FF0000"), GREEN("#00FF00"), BLUE("#0000FF"), YELLOW("#FFFF00"), WHITE("#FFFFFF");
+    RED("#FF0000"),
+    GREEN("#00FF00"),
+    BLUE("#0000FF"),
+    YELLOW("#FFFF00"),
+    WHITE("#FFFFFF");
     private String rgb;
     
 

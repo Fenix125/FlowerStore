@@ -1,4 +1,4 @@
-package lab3.oop.flowers;
+package lab.oop.flowers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,15 +11,14 @@ public class Flower {
     private int sepallength;
     private double price;
     private FlowerType flowerType;
-    public Flower(){}
-    public Flower(Flower flower){
+    public Flower() {}
+    public Flower(Flower flower) {
         color = flower.color;
         sepallength = flower.sepallength;
         price = flower.price;
         flowerType = flower.flowerType;
     }
-
-    public String getColor(){
+    public String getColor() {
         return color.toString();
     }
 }
