@@ -12,6 +12,7 @@ public class Main {
         System.out.println(flowerPack.getPrice());
         flower.setPrice(10);
         System.out.println(flowerPack.getPrice());
+        System.out.println(flower.getPrice());
 
     }
 }
