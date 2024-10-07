@@ -1,7 +1,10 @@
-package flower.store;
+package flowers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import lab3.oop.flowers.Flower;
+import lab3.oop.flowers.FlowerColor;
 
 import java.util.Random;
 
