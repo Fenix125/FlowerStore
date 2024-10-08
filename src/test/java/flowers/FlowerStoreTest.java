@@ -23,12 +23,14 @@ public class FlowerStoreTest {
     
     private Store flowerStore;
     private Flower roseFlower = 
-    new Flower(FlowerColor.RED, FLOWER_PRICE_I, FLOWER_SELLING_PRICE_I, FlowerType.ROSE);
+    new Flower(FlowerColor.RED, FLOWER_PRICE_I, 
+    FLOWER_SELLING_PRICE_I, FlowerType.ROSE);
     private FlowerPack rosePack = 
     new FlowerPack(roseFlower, FLOWER_QUANTITY_I);
 
     private Flower tulipFlower = 
-    new Flower(FlowerColor.YELLOW, FLOWER_PRICE_I, FLOWER_PRICE_II, FlowerType.TULIP);
+    new Flower(FlowerColor.YELLOW, FLOWER_PRICE_I, 
+    FLOWER_PRICE_II, FlowerType.TULIP);
     private FlowerPack tulipPack = 
     new FlowerPack(tulipFlower, FLOWER_QUANTITY_I);
 
@@ -47,8 +49,8 @@ public class FlowerStoreTest {
 
         FlowerPack tulipPackS = new FlowerPack(tulipFlower, FLOWER_QUANTITY_II);
 
-        FlowerBucket flowerBucket3 = new FlowerBucket();
-        flowerBucket3.add(tulipPackS);
+        FlowerBucket flowerBucketM = new FlowerBucket();
+        flowerBucketM.add(tulipPackS);
 
         flowerStore.add(flowerBucketN);
         flowerStore.add(flowerBucketS);
@@ -57,7 +59,7 @@ public class FlowerStoreTest {
         FlowerBucket flowerSearched = foundBuckets.get(0);
         Assertions.assertEquals(flowerBucketS, flowerSearched);
 
-        foundBuckets = flowerStore.search(flowerBucket3);
+        foundBuckets = flowerStore.search(flowerBucketM);
         List<FlowerBucket> empty = new ArrayList<>();
         Assertions.assertEquals(foundBuckets, empty);
     }                               
