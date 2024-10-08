@@ -2,6 +2,9 @@ package lab.oop.flowers;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.ToString;
+
+@ToString
 public class FlowerBucket {
     private List<FlowerPack> flowerPacks;
 
