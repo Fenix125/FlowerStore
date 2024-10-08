@@ -15,18 +15,22 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class FlowerStoreTest {
+    private static final int FLOWER_PRICE_I = 80;
+    private static final int FLOWER_SELLING_PRICE_I = 50;
+    private static final int FLOWER_PRICE_II = 60;
+    private static final int FLOWER_QUANTITY_I = 5;
+    private static final int FLOWER_QUANTITY_II = 6;
+    
     private Store flowerStore;
-    private static final int FLOWER_PRICE_1 = 80;
-    private static final int FLOWER_SELLING_PRICE_1 = 50;
-    private static final int FLOWER_PRICE_2 = 60;
-    private static final int FLOWER_QUANTITY_1 = 5;
-    private static final int FLOWER_QUANTITY_2 = 6;
+    private Flower roseFlower = 
+    new Flower(FlowerColor.RED, FLOWER_PRICE_I, FLOWER_SELLING_PRICE_I, FlowerType.ROSE);
+    private FlowerPack rosePack = 
+    new FlowerPack(roseFlower, FLOWER_QUANTITY_I);
 
-    private Flower roseFlower = new Flower(FlowerColor.RED, FLOWER_PRICE_1, FLOWER_SELLING_PRICE_1, FlowerType.ROSE);
-    private FlowerPack rosePack = new FlowerPack(roseFlower, FLOWER_QUANTITY_1);
-
-    private Flower tulipFlower = new Flower(FlowerColor.YELLOW, FLOWER_PRICE_1, FLOWER_PRICE_2, FlowerType.TULIP);
-    private FlowerPack tulipPack = new FlowerPack(tulipFlower, FLOWER_QUANTITY_1);
+    private Flower tulipFlower = 
+    new Flower(FlowerColor.YELLOW, FLOWER_PRICE_I, FLOWER_PRICE_II, FlowerType.TULIP);
+    private FlowerPack tulipPack = 
+    new FlowerPack(tulipFlower, FLOWER_QUANTITY_I);
 
     @BeforeEach
     public void inti() {
@@ -34,24 +38,24 @@ public class FlowerStoreTest {
     }
     @Test
     public void testStore() {
-        FlowerBucket flowerBucket1 = new FlowerBucket();
-        flowerBucket1.add(rosePack);
-        flowerBucket1.add(tulipPack);
+        FlowerBucket flowerBucketN = new FlowerBucket();
+        flowerBucketN.add(rosePack);
+        flowerBucketN.add(tulipPack);
 
-        FlowerBucket flowerBucket2 = new FlowerBucket();
-        flowerBucket2.add(tulipPack);
+        FlowerBucket flowerBucketS = new FlowerBucket();
+        flowerBucketS.add(tulipPack);
 
-        FlowerPack tulipPack2 = new FlowerPack(tulipFlower, FLOWER_QUANTITY_2);
+        FlowerPack tulipPackS = new FlowerPack(tulipFlower, FLOWER_QUANTITY_II);
 
         FlowerBucket flowerBucket3 = new FlowerBucket();
-        flowerBucket3.add(tulipPack2);
+        flowerBucket3.add(tulipPackS);
 
-        flowerStore.add(flowerBucket1);
-        flowerStore.add(flowerBucket2);
+        flowerStore.add(flowerBucketN);
+        flowerStore.add(flowerBucketS);
         
-        List<FlowerBucket> foundBuckets = flowerStore.search(flowerBucket2);
+        List<FlowerBucket> foundBuckets = flowerStore.search(flowerBucketS);
         FlowerBucket flowerSearched = foundBuckets.get(0);
-        Assertions.assertEquals(flowerBucket2, flowerSearched);
+        Assertions.assertEquals(flowerBucketS, flowerSearched);
 
         foundBuckets = flowerStore.search(flowerBucket3);
         List<FlowerBucket> empty = new ArrayList<>();
