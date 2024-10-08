@@ -11,7 +11,7 @@ public class Flower {
     private int sepallength;
     private double price;
     private FlowerType flowerType;
-    public Flower() {}
+    public Flower() { }
     public Flower(Flower flower) {
         color = flower.color;
         sepallength = flower.sepallength;

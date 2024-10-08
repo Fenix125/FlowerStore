@@ -9,7 +9,7 @@ public enum FlowerColor {
     private String rgb;
     
 
-    FlowerColor(String rgb){
+    FlowerColor(String rgb) {
         this.rgb = rgb;
     }
     @Override
